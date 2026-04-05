@@ -1,14 +1,30 @@
 # SceneTogether
 
-This repository is currently set up as the operating foundation for the SceneTogether project.
+SceneTogether is a structured decision surface for small groups trying to answer one question quickly:
 
-The focus right now is:
+> Which movie should we go see, and when?
 
-- project principles
-- agent roles
-- planning before coding
-- GitHub issue and PR hygiene
-- branch and review discipline
+The repository now contains the first static app shell for that product direction, plus the process and design guardrails that shape how the product should evolve.
+
+## Current app shell
+
+The first frontend slice is intentionally lean:
+
+- `/` is a branded entry page for the product wedge
+- `/g/friday-night` is a static sample group board
+- all content is local and seeded
+- no auth, persistence, APIs, or external movie data are included yet
+
+Backend, account, and data decisions are intentionally deferred until the shell is proven.
+
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+Then open [http://localhost:3000](http://localhost:3000).
 
 ## Key docs
 
@@ -21,13 +37,9 @@ The focus right now is:
 - [docs/product-foundation.md](./docs/product-foundation.md)
 - [docs/ui-system.md](./docs/ui-system.md)
 
-## Repo-local skill
+## Repo-local skills
 
 - `.codex/skills/scene-together-delivery`
 - `.codex/skills/scene-together-design`
 
-Use the delivery skill for planning and execution discipline, and the design skill for frontend/design-system work that needs tight visual control.
-
-## Current priority
-
-Before product code begins, make sure the GitHub repository is configured to enforce the workflow documented here.
+Use the delivery skill for planning and execution discipline, and the design skill for frontend and design-system work that needs tight visual control.
