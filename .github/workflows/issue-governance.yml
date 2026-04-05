@@ -1,0 +1,76 @@
+name: Issue Governance
+
+on:
+  issues:
+    types:
+      - opened
+      - edited
+      - reopened
+
+permissions:
+  contents: read
+  issues: read
+
+jobs:
+  issue-body:
+    name: Issue body policy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate issue body
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const body = issue.body || "";
+            const labels = issue.labels.map((label) => label.name);
+
+            const hasScopedTemplate = labels.some((label) =>
+              ["type:feature", "type:bug"].includes(label)
+            );
+
+            if (!hasScopedTemplate) {
+              core.info("Skipping issue governance check for non-feature/non-bug issue.");
+              return;
+            }
+
+            const requiredHeadingsByType = {
+              "type:feature": [
+                "### Context",
+                "### Problem",
+                "### Acceptance Criteria",
+                "### Out of Scope",
+                "### Proposed Plan",
+                "### Validation Plan",
+              ],
+              "type:bug": [
+                "### Observed Behavior",
+                "### Expected Behavior",
+                "### Reproduction",
+                "### Acceptance Criteria",
+                "### Out of Scope",
+                "### Proposed Plan",
+              ],
+            };
+
+            const activeType = labels.find((label) => requiredHeadingsByType[label]);
+            const requiredHeadings = requiredHeadingsByType[activeType] || [];
+            const missingHeadings = requiredHeadings.filter((heading) => !body.includes(heading));
+
+            if (missingHeadings.length > 0) {
+              core.setFailed(`Issue is missing required sections: ${missingHeadings.join(", ")}`);
+              return;
+            }
+
+            const forbiddenPlaceholders = [
+              "Describe the pain or gap clearly.",
+              "Explicitly list nearby ideas that do not belong here.",
+              "Required before code starts.",
+              "Describe the actual behavior and who sees it.",
+              "Provide deterministic steps if possible.",
+            ];
+
+            const presentPlaceholders = forbiddenPlaceholders.filter((snippet) => body.includes(snippet));
+            if (presentPlaceholders.length > 0) {
+              core.setFailed("Issue still contains template placeholder text. Replace the prompts with real content before implementation begins.");
+            }
+

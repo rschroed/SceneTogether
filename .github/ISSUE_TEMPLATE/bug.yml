@@ -1,0 +1,62 @@
+name: Bug
+description: Track a reproducible defect with a scoped fix plan.
+title: "[Bug] "
+labels:
+  - type:bug
+  - status:needs-plan
+body:
+  - type: textarea
+    id: symptom
+    attributes:
+      label: Observed Behavior
+      description: What is happening?
+      placeholder: Describe the actual behavior and who sees it.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should happen instead?
+      placeholder: Describe the intended behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: How do we reproduce the issue?
+      placeholder: Provide deterministic steps if possible.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: What must be true after the fix?
+      placeholder: |
+        - [ ] Bug no longer reproduces
+        - [ ] Regression risk is covered
+    validations:
+      required: true
+  - type: textarea
+    id: out_of_scope
+    attributes:
+      label: Out of Scope
+      description: What related cleanup is explicitly not part of this fix?
+      placeholder: Keep the bug fix boundary clear.
+    validations:
+      required: true
+  - type: textarea
+    id: plan
+    attributes:
+      label: Proposed Plan
+      description: Required before code starts.
+      placeholder: |
+        1. Problem
+        2. Scope
+        3. Proposed approach
+        4. Risks and unknowns
+        5. Validation
+    validations:
+      required: true

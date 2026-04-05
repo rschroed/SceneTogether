@@ -1,0 +1,43 @@
+- name: type:feature
+  color: 1f6feb
+  description: Product or engineering feature work.
+
+- name: type:bug
+  color: d73a4a
+  description: Reproducible defect or regression.
+
+- name: type:chore
+  color: 6e7781
+  description: Maintenance or repository upkeep.
+
+- name: type:spike
+  color: fbca04
+  description: Time-boxed research or investigation.
+
+- name: priority:p0
+  color: b60205
+  description: Critical and urgent.
+
+- name: priority:p1
+  color: d93f0b
+  description: Important, next-up work.
+
+- name: priority:p2
+  color: fbca04
+  description: Valuable but not urgent.
+
+- name: status:needs-plan
+  color: c2e0c6
+  description: Cannot start implementation until a plan is written.
+
+- name: status:blocked
+  color: 5319e7
+  description: Waiting on an external dependency or decision.
+
+- name: status:in-progress
+  color: 0e8a16
+  description: Actively being implemented.
+
+- name: status:in-review
+  color: 0052cc
+  description: Work is in review.

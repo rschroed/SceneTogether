@@ -1,0 +1,62 @@
+name: Feature
+description: Track a scoped product or engineering improvement.
+title: "[Feature] "
+labels:
+  - type:feature
+  - status:needs-plan
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What prompted this work?
+      placeholder: User need, product constraint, or technical context.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What specific problem are we solving?
+      placeholder: Describe the pain or gap clearly.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: What must be true for this issue to be considered done?
+      placeholder: |
+        - [ ] Criterion 1
+        - [ ] Criterion 2
+    validations:
+      required: true
+  - type: textarea
+    id: out_of_scope
+    attributes:
+      label: Out of Scope
+      description: What should not be pulled into this issue?
+      placeholder: Explicitly list nearby ideas that do not belong here.
+    validations:
+      required: true
+  - type: textarea
+    id: plan
+    attributes:
+      label: Proposed Plan
+      description: This must exist before code starts.
+      placeholder: |
+        1. Problem
+        2. Scope
+        3. Proposed approach
+        4. Risks and unknowns
+        5. Validation
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation Plan
+      description: How will we verify the change?
+      placeholder: Tests, manual checks, or explicit validation gaps.
+    validations:
+      required: true
