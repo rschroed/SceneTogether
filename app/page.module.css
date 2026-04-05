@@ -1,0 +1,55 @@
+.asideCard {
+  padding: var(--space-5);
+}
+
+.asideEyebrow {
+  margin: 0 0 var(--space-3);
+  color: var(--accent-secondary);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.asideText {
+  margin: 0;
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.flowGrid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.flowCard {
+  padding: var(--space-5);
+}
+
+.step {
+  margin: 0 0 var(--space-4);
+  color: var(--accent-warning);
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.flowTitle {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.flowCopy {
+  margin: var(--space-3) 0 0;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+@media (min-width: 840px) {
+  .flowGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

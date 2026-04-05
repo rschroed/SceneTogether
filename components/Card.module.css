@@ -1,0 +1,14 @@
+.card {
+  background: var(--surface-panel);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-panel);
+  backdrop-filter: blur(24px);
+}
+
+.hero {
+  background:
+    var(--surface-hero),
+    var(--surface-panel);
+  box-shadow: var(--shadow-panel), var(--shadow-glow);
+}

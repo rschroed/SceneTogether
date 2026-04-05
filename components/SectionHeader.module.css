@@ -1,0 +1,42 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-2);
+  color: var(--accent-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.description {
+  margin: var(--space-3) 0 0;
+  color: var(--text-muted);
+  max-width: 42rem;
+  line-height: 1.65;
+}
+
+.action {
+  flex-shrink: 0;
+}
+
+@media (min-width: 760px) {
+  .header {
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+  }
+}
