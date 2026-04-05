@@ -181,7 +181,7 @@ Every meaningful UI PR should answer:
 - Which shared components or primitives were used?
 - Did this introduce a new visual pattern?
 - If yes, why was extension impossible?
-- Are mobile and desktop screenshots included?
+- Were any optional screenshots or visual artifacts included where they materially helped review?
 - Does the hierarchy still feel bold and legible on a phone?
 
 ## Enforcement guidance
@@ -191,7 +191,7 @@ Once the frontend exists, enforce these mechanically where possible:
 - central token files
 - lint rules for banned raw values where practical
 - shared component library
-- screenshot review in PRs
+- optional screenshot review in PRs where helpful
 - visual regression snapshots for key screens
 
 ## Preferred implementation path

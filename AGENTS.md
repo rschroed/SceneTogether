@@ -75,7 +75,7 @@ This can live in the issue body, issue comments, or PR description draft, but it
 
 - Visual consistency is a product requirement, not polish work.
 - New UI patterns require justification; default to extending approved patterns.
-- UI PRs should include mobile and desktop screenshots once frontend code exists.
+- UI PRs may include mobile and desktop screenshots when they materially help review.
 - Arbitrary colors, spacing, typography, and motion values should be avoided in feature code when design tokens exist.
 
 ## Review standard

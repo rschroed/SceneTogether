@@ -23,8 +23,6 @@
 ## UI Review
 
 - [ ] No UI changes in this PR
-- [ ] Mobile screenshots included
-- [ ] Desktop screenshots included
 - [ ] Existing design patterns reused
 - [ ] New visual pattern justified below
 
