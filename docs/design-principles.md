@@ -165,6 +165,9 @@ The reference set suggests a narrow, high-energy palette family:
 
 The palette should stay constrained. Too many accent colors will collapse the visual discipline.
 
+For the current visual companion artifact, see the SceneTogether foundations sheet in Paper:
+https://app.paper.design/file/01KNG6S0KT4QKNXSDFB2HFQQ5A
+
 ## Typography direction
 
 Typography should do a large share of the branding work.
@@ -180,6 +183,8 @@ Avoid:
 - default system-only branding
 - soft, neutral startup typography
 - mixing too many expressive type voices
+
+The Paper foundations sheet above should be used as the visual reference for the current color and type pairing, while this document remains the written source for design intent.
 
 ## Design review questions
 
