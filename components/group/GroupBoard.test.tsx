@@ -18,13 +18,20 @@ function renderGroupBoard(slug = fridayNight.slug) {
 }
 
 describe("GroupBoard identity flow", () => {
-  it("shows the name prompt and blocked scaffolding on first visit", async () => {
+  it("renders only the shared-link identity surface", async () => {
     renderGroupBoard();
 
     expect(await screen.findByText("Add your name to this shared link")).toBeTruthy();
-    expect(screen.getAllByText("Identity required").length).toBeGreaterThan(0);
-    expect(screen.getAllByText("Add your name to weigh in on this option.").length).toBeGreaterThan(0);
-    expect(screen.getByText("Add your name before you can confirm the plan.")).toBeTruthy();
+    expect(screen.queryByText("Pick from the real options")).toBeNull();
+    expect(screen.queryByText("Lock the current plan")).toBeNull();
+    expect(screen.queryByText("Why the room is leaning this way")).toBeNull();
+    expect(screen.queryByText("Can Neon Rush become the plan?")).toBeNull();
+  });
+
+  it("shows the name prompt on first visit", async () => {
+    renderGroupBoard();
+
+    expect(await screen.findByText("Add your name to this shared link")).toBeTruthy();
   });
 
   it("stores and restores a valid display name on the same slug", async () => {
@@ -96,7 +103,7 @@ describe("GroupBoard identity flow", () => {
     expect(await screen.findByText("Add your name to this shared link")).toBeTruthy();
   });
 
-  it("switches candidate and plan scaffolding once identity exists", async () => {
+  it("keeps the ready identity state once identity exists", async () => {
     const user = userEvent.setup();
     renderGroupBoard();
 
@@ -104,9 +111,7 @@ describe("GroupBoard identity flow", () => {
     await user.type(input, "Riley");
     await user.click(screen.getByRole("button", { name: "Save name" }));
 
-    expect((await screen.findAllByText("Ready to weigh in as Riley.")).length).toBeGreaterThan(0);
-    expect(screen.getByText("Ready to confirm as Riley.")).toBeTruthy();
-    expect(screen.getAllByText("Response unlocked").length).toBeGreaterThan(0);
-    expect(screen.getByText("Confirmation unlocked")).toBeTruthy();
+    expect(await screen.findByText("Browsing as Riley")).toBeTruthy();
+    expect(screen.getByText("Identity set")).toBeTruthy();
   });
 });

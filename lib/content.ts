@@ -78,26 +78,6 @@ const fridayNight: GroupShellData = {
       { memberName: "Jules", status: "Pending" },
     ],
   },
-  activity: [
-    {
-      id: "1",
-      actor: "Maya",
-      action: "pushed Neon Rush to the top after the new trailer landed.",
-      timeLabel: "11m ago",
-    },
-    {
-      id: "2",
-      actor: "Jules",
-      action: "flagged that any plan after 9:30pm will lose momentum.",
-      timeLabel: "18m ago",
-    },
-    {
-      id: "3",
-      actor: "Nico",
-      action: "marked Grandview as the easiest theater for everyone to reach.",
-      timeLabel: "24m ago",
-    },
-  ],
 };
 
 const groups: Record<string, GroupShellData> = {
