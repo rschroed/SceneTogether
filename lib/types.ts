@@ -31,13 +31,6 @@ export type ActivePlan = {
   }>;
 };
 
-export type ActivityItem = {
-  id: string;
-  actor: string;
-  action: string;
-  timeLabel: string;
-};
-
 export type GroupShellData = {
   slug: string;
   groupName: string;
@@ -45,5 +38,4 @@ export type GroupShellData = {
   members: GroupMember[];
   candidates: MovieCandidate[];
   activePlan: ActivePlan;
-  activity: ActivityItem[];
 };
