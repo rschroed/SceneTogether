@@ -1,0 +1,51 @@
+.planCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-5);
+}
+
+.planHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.planCardEyebrow {
+  margin: 0 0 var(--space-3);
+  color: var(--accent-warning);
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.planCardTitle {
+  margin: 0;
+  font-family: var(--font-display), sans-serif;
+  font-size: 2rem;
+  line-height: 0.94;
+  text-transform: uppercase;
+}
+
+.planCardLocation {
+  margin: var(--space-3) 0 0;
+  color: var(--text-muted);
+}
+
+.confirmationRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border-soft);
+}
+
+@media (min-width: 760px) {
+  .planHeader {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+  }
+}

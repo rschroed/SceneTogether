@@ -1,5 +1,7 @@
 import type { MovieCandidate } from "@/lib/types";
 
+import { ResponseGate } from "@/components/group/ResponseGate";
+
 import { Card } from "./Card";
 import { Cluster } from "./layout/Cluster";
 import { StatusIndicator } from "./StatusIndicator";
@@ -8,9 +10,10 @@ import styles from "./PosterTile.module.css";
 
 type PosterTileProps = {
   candidate: MovieCandidate;
+  viewerDisplayName?: string;
 };
 
-export function PosterTile({ candidate }: PosterTileProps) {
+export function PosterTile({ candidate, viewerDisplayName }: PosterTileProps) {
   return (
     <Card>
       <article className={styles.tile}>
@@ -34,6 +37,13 @@ export function PosterTile({ candidate }: PosterTileProps) {
               </StatusIndicator>
             ))}
           </Cluster>
+          <ResponseGate
+            blockedBody="Add your name to weigh in on this option."
+            blockedLabel="Identity required"
+            readyBody={`Ready to weigh in as ${viewerDisplayName}.`}
+            readyLabel="Response unlocked"
+            viewerDisplayName={viewerDisplayName}
+          />
         </Stack>
       </article>
     </Card>
