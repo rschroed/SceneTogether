@@ -6,6 +6,11 @@ This document turns the design principles into implementation constraints.
 
 All production UI should resolve through shared tokens once the frontend exists.
 
+The current color and typography foundations sheet lives in Paper as a visual companion to this document:
+https://app.paper.design/file/01KNG6S0KT4QKNXSDFB2HFQQ5A
+
+This repo remains the normative written source; the Paper page is the companion artifact for visual alignment.
+
 Token categories to define early:
 
 - color
@@ -95,6 +100,8 @@ Do not:
 - use the display face for dense paragraphs
 - mix multiple expressive display faces
 - fall back to bland default stacks for branded surfaces unless temporarily blocked
+
+Use the Paper foundations sheet above as the current reference for the approved color palette, font pairing, and text-role examples when translating these rules into tokens and primitives.
 
 ## Layout system
 
